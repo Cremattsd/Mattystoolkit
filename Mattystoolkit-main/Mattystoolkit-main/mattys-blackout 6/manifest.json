@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Matty's Blackout",
+  "description": "Clean glass UI and color correction for RealNex with Dark/Light toggle + Split View Toolkit.",
+  "version": "15.2",
+  "author": "Matthew Smith",
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Matty's Toolkit Controls",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "tabs",
+    "storage",
+    "windows",
+    "system.display"
+  ],
+
+  "host_permissions": [
+    "https://*.realnex.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.realnex.com/*"],
+      "js": ["content.js", "blackout.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "minimum_chrome_version": "100",
+  "offline_enabled": true
+}
