@@ -122,5 +122,6 @@ The logic that ties UI switches → storage → messages → content → blackou
 
 ## 👤 Author
 Matthew “Matt” Smith  
+Andrew "Botty" Botros
 San Diego  
 RealNex + CRE Tech  
